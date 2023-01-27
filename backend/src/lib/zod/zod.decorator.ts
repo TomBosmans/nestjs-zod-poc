@@ -39,7 +39,7 @@ function applyResponseDecorators({ response }: Schema) {
     return [
       ...decorators,
       ApiResponse({ status: Number(status), schema: zodToJson(schema) }),
-      UseInterceptors(new TransformInterceptor(schema))
+      UseInterceptors(new TransformInterceptor(schema)),
     ]
   }, [])
 }
